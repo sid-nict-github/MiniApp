@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'Project/base.html' %}
+{% load widget_tweaks %}
+
+
+{% block mainsection %}
+    <h1 class="display-1">Signup</h1>
+    
+        <div class="mb-3">
+
+            <form method='post'>
+                {% csrf_token %}
+
+                {% comment %} userform fields {% endcomment %}
+                {% for field in userform.visible_fields %}
+
+                    <div class="mb-3">
+                        <label class="form-label">{{ field.label_tag }}</label>
+                        {% render_field field class="form-control" %}
+                    </div>
+
+                {% endfor %}
+
+                {% comment %} userprofileinfoform fields {% endcomment %}
+                {% for field in userprofileinfoform.visible_fields %}
+
+                    <div class="mb-3">
+                        <label class="form-label">{{ field.label_tag }}</label>
+                        {% render_field field class="form-control" %}
+                    </div>
+
+                {% endfor %}
+
+                <button type='submit' class="btn btn-primary btn-lg">Signup</button>
+            </form>
+            
+            <br>
+
+            {% comment %} Check if the Signup has been successful {% endcomment %}
+            {% if isSignupSuccess == True %}
+                <p class="alert alert-success">Signup successful!</p>
+            {% endif %}
+
+            <br>
+
+            <a href='./'>Already a user, sign in</a>
+        </div>
+
+{% endblock %}

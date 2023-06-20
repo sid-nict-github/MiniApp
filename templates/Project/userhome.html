@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'Project/base.html' %}
+
+{% block mainsection %}
+    <h1 class="display-1">User Home of {{ request.session.session_uname }}</h1>
+    <a href="{% url 'signout' %}">Signout</a>
+    <hr>
+    <a href="{% url 'userpage2' %}">Open User Page2</a>    
+{% endblock %}
