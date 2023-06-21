@@ -88,7 +88,7 @@ EMAIL_HOST = 'smtp.office365.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'nict15@hotmail.com'
-EMAIL_HOST_PASSWORD = '1530nict'
+EMAIL_HOST_PASSWORD = '******'     # ulta nict   
 DEFAULT_FROM_EMAIL = 'nict15@hotmail.com'
 
 # Database
